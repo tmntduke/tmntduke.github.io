@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      android笔记5-18 | 阿木小巫 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="阿木小巫">
+    
+    
+
+    <meta name="description" content="###ScorllBar使用
+
+ListView/ScrollView/RecyclerView中使用
+
+123456789android:scrollbars=&quot;vertical|horizontal&quot;&amp;lt;!--短条--&amp;gt;android:scrollbarTrackVertical[horizontal]=&quot;@drawable/xxx_vertical_track&quot;&amp;lt;!--长条（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android笔记5-18 | 阿木小巫">
+<meta property="og:url" content="http://yoursite.com/2016/05/18/android笔记5—18/index.html">
+<meta property="og:site_name" content="阿木小巫">
+<meta property="og:description" content="###ScorllBar使用
+
+ListView/ScrollView/RecyclerView中使用
+
+123456789android:scrollbars=&quot;vertical|horizontal&quot;&amp;lt;!--短条--&amp;gt;android:scrollbarTrackVertical[horizontal]=&quot;@drawable/xxx_vertical_track&quot;&amp;lt;!--长条（">
+<meta property="og:updated_time" content="2016-05-18T15:11:11.434Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android笔记5-18 | 阿木小巫">
+<meta name="twitter:description" content="###ScorllBar使用
+
+ListView/ScrollView/RecyclerView中使用
+
+123456789android:scrollbars=&quot;vertical|horizontal&quot;&amp;lt;!--短条--&amp;gt;android:scrollbarTrackVertical[horizontal]=&quot;@drawable/xxx_vertical_track&quot;&amp;lt;!--长条（">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">阿木小巫</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          爱音乐 爱读书 爱编程
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/tmntduke" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">android笔记5-18</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-05-18" class="post-meta__date date">2016-05-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/笔记/">笔记</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>###ScorllBar使用</p>
+<blockquote>
+<p>ListView/ScrollView/RecyclerView中使用</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbars=<span class="string">"vertical|horizontal"</span></span><br><span class="line">&lt;!--短条--&gt;</span><br><span class="line">android:scrollbarTrackVertical[horizontal]=<span class="string">"@drawable/xxx_vertical_track"</span></span><br><span class="line">&lt;!--长条（可为背景）--&gt;</span><br><span class="line">android:scrollbarThumbVertical[horizontal]=<span class="string">"@drawable/xxx_vertical_thumb"</span></span><br><span class="line">&lt;!-- 定义滚动条的样式和位置 --&gt;</span><br><span class="line">android:scrollbarStyle=<span class="string">"outsideInset"</span></span><br><span class="line">&lt;!-- 定义滚动条的大小，垂直时指宽度，水平时指高度 --&gt;</span><br><span class="line">android:scrollbarSize=<span class="string">"4dp"</span></span><br></pre></td></tr></table></figure>
+<h5 id="滚动条样式"><a href="#滚动条样式" class="headerlink" title="滚动条样式"></a>滚动条样式</h5><table>
+<thead>
+<tr>
+<th style="text-align:center">属性值</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">insideOverlay</td>
+<td style="text-align:left"><strong>默认值</strong> 表示在padding区域内并且覆盖在view上</td>
+</tr>
+<tr>
+<td style="text-align:center">insideInset</td>
+<td style="text-align:left">表示在padding区域内并且插入在view后面</td>
+</tr>
+<tr>
+<td style="text-align:center">outsideOverlay</td>
+<td style="text-align:left">表示在padding区域外并且覆盖在view上</td>
+</tr>
+<tr>
+<td style="text-align:center">outsideInset</td>
+<td style="text-align:left">表示在padding区域外并且插入在view后面</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>在效果颜色时不能十六制数，必须使用@color资源文件中的颜色</p>
+</blockquote>
+<h4 id="LayoutInflaterFactory使用"><a href="#LayoutInflaterFactory使用" class="headerlink" title="LayoutInflaterFactory使用"></a>LayoutInflaterFactory使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setFactory(LayoutInflater.Factory factory)</span><br><span class="line">setFactory2(LayoutInflater.Factory2 factory)</span><br></pre></td></tr></table></figure>
+<p>自定义布局填充</p>
+<p>提供一下方法进行自定义view</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">View <span class="title">onCreateView</span><span class="params">(String name, Context context, AttributeSet attrs)</span></span><br><span class="line"></span><br><span class="line">View <span class="title">onCreateView</span><span class="params">(View parent, String name, Context context, AttributeSet attrs)</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="TabLayout"><a href="#TabLayout" class="headerlink" title="TabLayout"></a>TabLayout</h4><blockquote>
+<p>在选项卡中添加图标 无效果 使用以下方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">viewPager.addOnPageChangeListener(<span class="keyword">new</span> TabLayoutOnPageChangeListener(tabLayout));  </span><br><span class="line">tabLayout.setOnTabSelectedListener(<span class="keyword">new</span> ViewPagerOnTabSelectedListener(viewPager));</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'letian'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer class="footer">
+
+   <p class="copyright">
+   本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次, 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+</p>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2d6d8820189424c84b870bc40cc2c48c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
