@@ -7,7 +7,7 @@
     
 
     <title>
-      createCircularReveal()使用 | 阿木小巫 
+      android动画 | 阿木小巫 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,22 +16,37 @@
     
     
 
-    <meta name="description" content="ViewAnimationUtils.createCircularReveal()以圆形动画向另一个界面过渡
-public static Animator createCircularReveal(View view,int centerX,  int centerY, float startRadius, float endRadius) {
-return new RevealAnimator(">
+    <meta name="description" content="android动画Animator
+alpha() –设定动画的 alpha 值
+scaleX() 与 scaleY() – 将视图缩放于 X 和/或 Y 坐标轴
+translationZ()-在 Z 轴上平移视图；
+setDuration() –设置动画时长
+setStartDelay() –设置动画延时
+setInterpolator() – 设置动画插值
+setListener() – 为动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="createCircularReveal()使用 | 阿木小巫">
+<meta property="og:title" content="android动画 | 阿木小巫">
 <meta property="og:url" content="http://yoursite.com/2016/05/17/动画/index.html">
 <meta property="og:site_name" content="阿木小巫">
-<meta property="og:description" content="ViewAnimationUtils.createCircularReveal()以圆形动画向另一个界面过渡
-public static Animator createCircularReveal(View view,int centerX,  int centerY, float startRadius, float endRadius) {
-return new RevealAnimator(">
-<meta property="og:updated_time" content="2016-05-16T15:59:56.511Z">
+<meta property="og:description" content="android动画Animator
+alpha() –设定动画的 alpha 值
+scaleX() 与 scaleY() – 将视图缩放于 X 和/或 Y 坐标轴
+translationZ()-在 Z 轴上平移视图；
+setDuration() –设置动画时长
+setStartDelay() –设置动画延时
+setInterpolator() – 设置动画插值
+setListener() – 为动">
+<meta property="og:updated_time" content="2016-05-24T13:18:47.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="createCircularReveal()使用 | 阿木小巫">
-<meta name="twitter:description" content="ViewAnimationUtils.createCircularReveal()以圆形动画向另一个界面过渡
-public static Animator createCircularReveal(View view,int centerX,  int centerY, float startRadius, float endRadius) {
-return new RevealAnimator(">
+<meta name="twitter:title" content="android动画 | 阿木小巫">
+<meta name="twitter:description" content="android动画Animator
+alpha() –设定动画的 alpha 值
+scaleX() 与 scaleY() – 将视图缩放于 X 和/或 Y 坐标轴
+translationZ()-在 Z 轴上平移视图；
+setDuration() –设置动画时长
+setStartDelay() –设置动画延时
+setInterpolator() – 设置动画插值
+setListener() – 为动">
     
     
     
@@ -199,7 +214,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">createCircularReveal()使用</h1>
+    <h1 class="post-title">android动画</h1>
 
     
 
@@ -211,7 +226,7 @@ classes that you can use:
           
             <font class="categories">
             &#8226; 分类:
-            <a class="categories-link" href="/categories/Android辅助类/">Android辅助类</a>
+            <a class="categories-link" href="/categories/动画/">动画</a>
             </font>
           
 
@@ -225,11 +240,71 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="ViewAnimationUtils-createCircularReveal"><a href="#ViewAnimationUtils-createCircularReveal" class="headerlink" title="ViewAnimationUtils.createCircularReveal()"></a>ViewAnimationUtils.createCircularReveal()</h4><p>以圆形动画向另一个界面过渡</p>
+    <h3 id="android动画"><a href="#android动画" class="headerlink" title="android动画"></a>android动画</h3><h4 id="Animator"><a href="#Animator" class="headerlink" title="Animator"></a>Animator</h4><ul>
+<li>alpha() –设定动画的 alpha 值</li>
+<li>scaleX() 与 scaleY() – 将视图缩放于 X 和/或 Y 坐标轴</li>
+<li>translationZ()-在 Z 轴上平移视图；</li>
+<li>setDuration() –设置动画时长</li>
+<li>setStartDelay() –设置动画延时</li>
+<li>setInterpolator() – 设置动画插值</li>
+<li>setListener() – 为动画的开始、结束、重复、取消设置侦听器</li>
+</ul>
+<blockquote>
+<p>view.animate().动画操作.start()</p>
+</blockquote>
+<h4 id="ObjectAnimator"><a href="#ObjectAnimator" class="headerlink" title="ObjectAnimator"></a>ObjectAnimator</h4><p><strong> ObjectAnimator.ofInt()</strong> 添加属性动画xml<br>参数：</p>
+<ul>
+<li>view – 应用动画的视图</li>
+<li>property – 设定动画的属性</li>
+<li>start color – 动画视图的初始颜色</li>
+<li>target color – 动画视图的目标颜色</li>
+</ul>
+<h4 id="Interpolator"><a href="#Interpolator" class="headerlink" title="Interpolator"></a>Interpolator</h4><ul>
+<li>Accelerate –视图逐渐加速直到动画结束；</li>
+<li>Decelerate –视图逐渐减速直到动画结束；</li>
+<li>Anticipate –在以标准方式开始动画之前，视图先进行轻微反转；</li>
+<li>Anticipate-Overshoot –与 Anticipate 类似，但动画过程中，回拉动作更为夸张；</li>
+<li>BounceInterpolator – 视图动画结束之前会有‘反弹’效果；</li>
+<li>LinearInterpolator – 视图以线型平滑的动画开始，直到结束；</li>
+<li>OvershootInterpolator – 视图动画先放大给定值，再缩回原值</li>
+</ul>
+<h4 id="ViewAnimationUtils-createCircularReveal"><a href="#ViewAnimationUtils-createCircularReveal" class="headerlink" title="ViewAnimationUtils.createCircularReveal()"></a>ViewAnimationUtils.createCircularReveal()</h4><p>以圆形动画向另一个界面过渡</p>
 <pre><code>public static Animator createCircularReveal(View view,int centerX,  int centerY, float startRadius, float endRadius) {
 return new RevealAnimator(view, centerX, centerY, startRadius, endRadius);
 }
 </code></pre><p>第一参数为要进行圆形缩放的view<br>第二和第三参数分别为缩放点的横纵坐标<br>第四和第五参数为开始的半径和结束的半径</p>
+<h4 id="窗口转换"><a href="#窗口转换" class="headerlink" title="窗口转换"></a>窗口转换</h4><ul>
+<li>enter –决定活动视图如何进入场景；</li>
+<li>exit -决定活动视图如何退出场景；</li>
+<li>reenter –决定活动视图退出后如何再度进入；</li>
+<li>shared elements –决定活动间如何共享视图转</li>
+</ul>
+<h5 id="爆炸"><a href="#爆炸" class="headerlink" title="爆炸"></a>爆炸</h5><p>在网格布局中使用效果较好</p>
+<ol>
+<li>在 res/transition中创建转换文件</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;explode</span><br><span class="line"> xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line"> android:duration=<span class="string">"300"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>设置为活动的转换，可以将其添加到活动的主题<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style</span><br><span class="line">    name="AppTheme.Explode"  parent="AppTheme.NoActionBar"&gt;</span><br><span class="line">  &lt;item   </span><br><span class="line">     name="android:windowExitTransition"&gt;@transition/slide_explode&lt;/item&gt;</span><br><span class="line">  &lt;item</span><br><span class="line">     name="android:windowReenterTransition"&gt;@android:transition/slide_top&lt;/item&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Transition explode =</span><br><span class="line"> TransitionInflater.from(<span class="keyword">this</span>).inflateTransition(R.transition.explode);</span><br><span class="line">getWindow().setEnterTransition(explode);</span><br></pre></td></tr></table></figure>
+<h5 id="滑动slide"><a href="#滑动slide" class="headerlink" title="滑动slide"></a>滑动slide</h5><h5 id="渐变fade"><a href="#渐变fade" class="headerlink" title="渐变fade"></a>渐变fade</h5><p> <strong> 允许窗口页面转换 </strong> 需要在主题中启用下列属性，主题都来源于一个资料主题</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;item</span><br><span class="line"> name="android:windowContentTransitions"&gt;true&lt;/item&gt;</span><br></pre></td></tr></table></figure>
+<p> <strong> 启用/禁用转换重叠</strong> 上一转换过程结束，新的页面动画才会开始，这样就会形成时延。在不同的案例中，若启用如下属性，转换过程都会更加流畅自然</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;item</span><br><span class="line">  name="android:windowAllowEnterTransitionOverlap"&gt;true&lt;/item&gt;</span><br><span class="line">&lt;item</span><br><span class="line"> name="android:windowAllowReturnTransitionOverlap"&gt;true&lt;/item&gt;</span><br></pre></td></tr></table></figure>
+<p><strong> 排除特定视图转换</strong>有时我们并不想让活动中的所有视图参与动画，而且大多数情况下，工具栏和状态栏是造成转换故障主因。所幸，可以排除特定的视图，使之无法转换</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;explode</span><br><span class="line"> xmlns:android="http://schemas.android.com/apk/res/android"</span><br><span class="line"> android:duration="200"&gt;</span><br><span class="line">  &lt;targets&gt;</span><br><span class="line">   &lt;target</span><br><span class="line">     android:excludeId="@android:id/navigationBarBackground"/&gt;</span><br><span class="line">      &lt;target</span><br><span class="line">       android:excludeId="@android:id/statusBarBackground"/&gt;</span><br><span class="line">      &lt;/targets&gt;</span><br><span class="line">&lt;/explode&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="共享元素转换"><a href="#共享元素转换" class="headerlink" title="共享元素转换"></a>共享元素转换</h5><ul>
+<li><p>在布局中要转换的view中添加属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:transitionName=<span class="string">"@string/transition_view"</span> <span class="comment">//string值自定义</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在目标布局的view中添加相同属性（string 值必须一致）</p>
+</li>
+<li><p>被转换Activity中添加</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat transitionActivityOptions =</span><br><span class="line">  ActivityOptionsCompat</span><br><span class="line">   .makeSceneTransitionAnimation(</span><br><span class="line">      SharedTransitionsActivity.<span class="keyword">this</span></span><br><span class="line">        ,participants);</span><br><span class="line"></span><br><span class="line">ActivityCompat.startActivity(</span><br><span class="line">  SharedTransitionsActivity.<span class="keyword">this</span>,intent</span><br><span class="line">    ,transitionActivityOptions.toBundle());</span><br></pre></td></tr></table></figure>
 
   </section>
 
