@@ -7,7 +7,7 @@
     
 
     <title>
-      page 2 | 阿木小巫 
+      android错误信息 | 阿木小巫 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,15 +16,16 @@
     
     
 
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="page 2 | 阿木小巫">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+    <meta name="description" content="android错误信息android.view.WindowLeaked 窗体泄露对话框、PopupWindown不能脱离Activity而单独存在着，当某个Dialog或者某个PopupWindow正在显示的时finish()了承载该Dialog(或PopupWindow)的Activity时，就会抛Window Leaked异常了，因为这个Dialog(或PopupWindow)的Window">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android错误信息 | 阿木小巫">
+<meta property="og:url" content="http://yoursite.com/2016/05/21/android错误信息/index.html">
 <meta property="og:site_name" content="阿木小巫">
-<meta property="og:description">
+<meta property="og:description" content="android错误信息android.view.WindowLeaked 窗体泄露对话框、PopupWindown不能脱离Activity而单独存在着，当某个Dialog或者某个PopupWindow正在显示的时finish()了承载该Dialog(或PopupWindow)的Activity时，就会抛Window Leaked异常了，因为这个Dialog(或PopupWindow)的Window">
+<meta property="og:updated_time" content="2016-06-01T14:31:51.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="page 2 | 阿木小巫">
-<meta name="twitter:description">
+<meta name="twitter:title" content="android错误信息 | 阿木小巫">
+<meta name="twitter:description" content="android错误信息android.view.WindowLeaked 窗体泄露对话框、PopupWindown不能脱离Activity而单独存在着，当某个Dialog或者某个PopupWindow正在显示的时finish()了承载该Dialog(或PopupWindow)的Activity时，就会抛Window Leaked异常了，因为这个Dialog(或PopupWindow)的Window">
     
     
     
@@ -44,8 +45,8 @@
     </span>
 
     
- 
-<header class="panel-cover">
+
+<header class="panel-cover panel-cover--collapsed">
 
 
   <div class="panel-main">
@@ -188,86 +189,78 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">android错误信息</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/15/ViewDragHelper/" title="link to ViewDragHelper使用">ViewDragHelper使用</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-15" class="post-list__meta--date date">2016-05-15</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/15/read/" title="link to Android笔记">Android笔记</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-15" class="post-list__meta--date date">2016-05-15</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/14/hello-world/" title="link to Hello World">Hello World</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-14" class="post-list__meta--date date">2016-05-14</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-    
-    	
-          <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/#blog">&larr; 上一页 </a>
-        
     
 
-    <span class="pagination__page-number"> 2 / 2</span>
+    <div class="post-meta">
+      <time datetime="2016-05-21" class="post-meta__date date">2016-05-21</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/错误信息/">错误信息</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="android错误信息"><a href="#android错误信息" class="headerlink" title="android错误信息"></a>android错误信息</h3><h4 id="android-view-WindowLeaked-窗体泄露"><a href="#android-view-WindowLeaked-窗体泄露" class="headerlink" title="android.view.WindowLeaked 窗体泄露"></a>android.view.WindowLeaked 窗体泄露</h4><p>对话框、PopupWindown不能脱离Activity而单独存在着，当某个Dialog或者某个PopupWindow正在显示的时finish()了承载该Dialog(或PopupWindow)的Activity时，就会抛Window Leaked异常了，因为这个Dialog(或PopupWindow)的WindowManager已经没有依附的activity，所以它的窗体管理器已经泄漏了</p>
+<ul>
+<li><p>解决方法</p>
+<p>关闭(finish)某个Activity前，要确保附属在上面的Dialog或PopupWindow已经关闭(dismiss)了。</p>
+</li>
+</ul>
+<h4 id="android-view-InflateException-布局文件加载错误"><a href="#android-view-InflateException-布局文件加载错误" class="headerlink" title="android.view.InflateException 布局文件加载错误"></a>android.view.InflateException 布局文件加载错误</h4><p>可能由布局文件中控件名称，属性名称等错误引起</p>
+<p>或加载像素太大的图片 通常会伴随outOfMemory</p>
+<ul>
+<li><p>解决方法</p>
+<p>查找拼写错误的控件或属性名称</p>
+<p>加载大像素图片时使用 <strong> BitmapFactory.Options </strong>进行图片的缩放**</p>
+</li>
+</ul>
+<h4 id="java-lang-IllegalStateException"><a href="#java-lang-IllegalStateException" class="headerlink" title="java.lang.IllegalStateException:"></a>java.lang.IllegalStateException:</h4><blockquote>
+<p>The specified child already has a parent. You must call removeView() on the child’s parent first.</p>
+</blockquote>
+<p>状态非法异常，在同一父容器中加载多次子控件</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'letian'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
-</div>
+  
+</article>
+
+
             <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <footer class="footer">
 
@@ -298,6 +291,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     <script>
 var _hmt = _hmt || [];
 (function() {
