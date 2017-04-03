@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      git使用 | 阿木小巫 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="阿木小巫">
+    
+    
+
+    <meta name="description" content="git使用创建版本库和提交
+创建
+使用cd进入项目目录中  之后 git init 创建代码仓库
+
+提交
+git add . 提交所有代码，add后加具体文件名为提交指定文件
+git add –A 当文档库中有文件删除 会扫描 并删除文件
+git add -u 查找更新
+git commit -m’说明’ 提交到版本库
+
+
+删除和还原当 add执行后：
+删除 git rm (会删除文件) –cac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git使用 | 阿木小巫">
+<meta property="og:url" content="http://yoursite.com/2017/04/03/Git使用/index.html">
+<meta property="og:site_name" content="阿木小巫">
+<meta property="og:description" content="git使用创建版本库和提交
+创建
+使用cd进入项目目录中  之后 git init 创建代码仓库
+
+提交
+git add . 提交所有代码，add后加具体文件名为提交指定文件
+git add –A 当文档库中有文件删除 会扫描 并删除文件
+git add -u 查找更新
+git commit -m’说明’ 提交到版本库
+
+
+删除和还原当 add执行后：
+删除 git rm (会删除文件) –cac">
+<meta property="og:updated_time" content="2017-04-03T05:59:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git使用 | 阿木小巫">
+<meta name="twitter:description" content="git使用创建版本库和提交
+创建
+使用cd进入项目目录中  之后 git init 创建代码仓库
+
+提交
+git add . 提交所有代码，add后加具体文件名为提交指定文件
+git add –A 当文档库中有文件删除 会扫描 并删除文件
+git add -u 查找更新
+git commit -m’说明’ 提交到版本库
+
+
+删除和还原当 add执行后：
+删除 git rm (会删除文件) –cac">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">阿木小巫</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          爱音乐 爱读书 爱编程
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/tmntduke" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">git使用</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-04-03" class="post-meta__date date">2017-04-03</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Git/">Git</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="git使用"><a href="#git使用" class="headerlink" title="git使用"></a>git使用</h2><h3 id="创建版本库和提交"><a href="#创建版本库和提交" class="headerlink" title="创建版本库和提交"></a>创建版本库和提交</h3><ul>
+<li><p>创建</p>
+<p>使用cd进入项目目录中  之后 git init 创建代码仓库</p>
+</li>
+<li><p>提交</p>
+<p>git add . 提交所有代码，add后加具体文件名为提交指定文件</p>
+<p>git add –A 当文档库中有文件删除 会扫描 并删除文件</p>
+<p>git add -u 查找更新</p>
+<p>git commit -m’说明’ 提交到版本库</p>
+</li>
+</ul>
+<h3 id="删除和还原"><a href="#删除和还原" class="headerlink" title="删除和还原"></a>删除和还原</h3><p>当 add执行后：</p>
+<p>删除 git rm (会删除文件) –cache (不会删文件 但会将文档库中的索引删除)</p>
+<p>当commit执行后</p>
+<p>删除 git reset 将还原commit操作</p>
+<h3 id="忽略"><a href="#忽略" class="headerlink" title="忽略"></a>忽略</h3><p>忽略上传文件: </p>
+<p>在项目文件夹根路径下创建.gitignore文件，然后编辑文件，将要忽略的文件写入。</p>
+<p>规则：</p>
+<ul>
+<li><p>#任意字符</p>
+</li>
+<li><p>*代表忽略所有文件</p>
+</li>
+<li><p>file/ file文件夹下文件</p>
+</li>
+<li><p>/file 当前文件夹下file文件</p>
+</li>
+<li><p>/**/ 任意文件夹</p>
+</li>
+</ul>
+<h4 id="查看文件修改情况"><a href="#查看文件修改情况" class="headerlink" title="查看文件修改情况"></a>查看文件修改情况</h4><p> git status</p>
+<h4 id="commit-节点"><a href="#commit-节点" class="headerlink" title="commit 节点"></a>commit 节点</h4><p>HEAD 为提交节点 表示最近提交 ~为层级节点 ^为父节点<br>可简写 @</p>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>branch –a 查看所有分支</p>
+<p>git branch version1.0 创建分支</p>
+<p>将代码转移到分支：git checkout version1.0</p>
+<p>简便：<br>git checkout –b 直接创建新分支 并进入该分支</p>
+<p>当文件添加到分支后 再切换分支 提交 此文件还会被提交到上一个分支</p>
+<blockquote>
+<p>checkout 检出文件 （会还原文件） </p>
+</blockquote>
+<p>删除分支：git branch –D version1.0</p>
+<h3 id="合并-冲突"><a href="#合并-冲突" class="headerlink" title="合并 冲突"></a>合并 冲突</h3><h4 id="合并"><a href="#合并" class="headerlink" title="合并"></a><strong>合并</strong></h4><p>将两个分支的代码合并：</p>
+<p>git checkout A</p>
+<p>git merge B    (将分支B合并到分支A)</p>
+<p>之后将分支B删除  </p>
+<p>还原合并操作：git reset</p>
+<p>git reset –hard HEAD^ 将文件一起还原</p>
+<blockquote>
+<p>当分支是从master中生长出来 用以上方式合并<br>但是不会产生新的commit节点 同时不会留下合并的记录<br>只是将master引用到另一条分支上</p>
+</blockquote>
+<p>还原</p>
+<blockquote>
+<p>git revert 使文件还原到上一个commit节点 但不删掉节点 会产生一个新节点 </p>
+</blockquote>
+<p>保留合并记录：</p>
+<p>git merge –no-ff 分支名称</p>
+<p>产生新的commit节点 再master分支上</p>
+<p><strong>cherry-pick合并 将节点合并到文件中</strong></p>
+<p>产生新的commit节点 –n不产生</p>
+<ol>
+<li>放弃 git cherry-pick abort</li>
+<li>继续 修改冲突文件 执行git add.  git cherry-pick continue</li>
+</ol>
+<p><strong>rebase将分支修改运用到另一个分支上</strong></p>
+<p>简化演进图</p>
+<p>冲突解决和merge同</p>
+<p>还原rebase git rebase –abort</p>
+<p>已经执行完成 git reset HEAD（必需找到rebase之前的commit节点）</p>
+<p>使用 git reflog HEAD 或分支名称</p>
+<p>查找变动的历史记录l</p>
+<p><strong>冲突</strong></p>
+<p>// &lt;&lt;&lt;&lt;&lt;&lt;&lt; // 冲突开始</p>
+<p>冲突行</p>
+<p>// ======= //</p>
+<p>// &gt;&gt;&gt;&gt;&gt;&gt;&gt; // 冲突分支</p>
+<p>处理冲突后再进行 add 和 commit</p>
+<h3 id="远程版本库"><a href="#远程版本库" class="headerlink" title="远程版本库"></a>远程版本库</h3><p>git init –bare Git 文档库文件夹名 （.git）</p>
+<p>下载github上的代码：</p>
+<p>git clone 远程地址 本地路径</p>
+<p>本地文档库和远程文档库关联：</p>
+<p>git remote add 远程文档库名称 远程地址</p>
+<p>先进行add 和 commit</p>
+<p>将代码上传到远程版本库：</p>
+<p>git push 地址 分支</p>
+<ol>
+<li><p>push -u 与远程版本库分支取得联系，在配置文件中记录</p>
+</li>
+<li><p>push –f 强制推送</p>
+</li>
+</ol>
+<p>将本地修改同步到远程版本库：git fetch 地址 分支</p>
+<p>查看修改内容：git diff 地址/分支 之后用merge合并代码</p>
+<p>获取最新代码并合并到分支: git pull 地址 分支</p>
+<p>远程版本库新名称：</p>
+<p>git remote rename newname</p>
+<p>远程文档库新地址</p>
+<p>git remote set-url newurl</p>
+<p>删除远程某个分支:</p>
+<p>git push 远程名称 –-delete 分支名称</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'letian'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer class="footer">
+
+   <p class="copyright">
+   本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次, 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+</p>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2d6d8820189424c84b870bc40cc2c48c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
