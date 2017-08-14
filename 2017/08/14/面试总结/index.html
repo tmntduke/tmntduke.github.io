@@ -7,7 +7,7 @@
     
 
     <title>
-      page 2 | 归档: 2016/5 | 阿木小巫 
+      面试总结 | 阿木小巫 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,15 +16,22 @@
     
     
 
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="page 2 | 归档: 2016/5 | 阿木小巫">
-<meta property="og:url" content="http://yoursite.com/archives/2016/05/page/2/index.html">
+    <meta name="description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结 | 阿木小巫">
+<meta property="og:url" content="http://yoursite.com/2017/08/14/面试总结/index.html">
 <meta property="og:site_name" content="阿木小巫">
-<meta property="og:description">
+<meta property="og:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+<meta property="og:updated_time" content="2017-08-14T12:37:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="page 2 | 归档: 2016/5 | 阿木小巫">
-<meta name="twitter:description">
+<meta name="twitter:title" content="面试总结 | 阿木小巫">
+<meta name="twitter:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
     
     
     
@@ -188,87 +195,69 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-  <h1 class="archive-title">归档: 2016/5</h1>
-  <hr class="post-list__divider" />
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">面试总结</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/15/ViewDragHelper/" title="link to ViewDragHelper使用">ViewDragHelper使用</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-15" class="post-list__meta--date date">2016-05-15</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/15/read/" title="link to Android笔记">Android笔记</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-15" class="post-list__meta--date date">2016-05-15</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/14/hello-world/" title="link to Hello World">Hello World</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-14" class="post-list__meta--date date">2016-05-14</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-    
-    	
-          <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/archives/2016/05/">&larr; 上一页 </a>
-        
     
 
-    <span class="pagination__page-number"> 2 / 2</span>
+    <div class="post-meta">
+      <time datetime="2017-08-14" class="post-meta__date date">2017-08-14</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/面试/">面试</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）"><a href="#1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）" class="headerlink" title="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）"></a>1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）</h3><pre><code>epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+</code></pre><h3 id="2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"><a href="#2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点" class="headerlink" title="2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"></a>2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点</h3><pre><code>okHttp支持http2.0 UrlHttpConnection只支持http1.0/1.1 但他们同样使用Socket
+优点：使用Gzip 缓存 拦截器
+</code></pre><h3 id="3-handler取MQ中数据由时间取"><a href="#3-handler取MQ中数据由时间取" class="headerlink" title="3.handler取MQ中数据由时间取"></a>3.handler取MQ中数据由时间取</h3><h3 id="4-handler源码，内部使用"><a href="#4-handler源码，内部使用" class="headerlink" title="4.handler源码，内部使用"></a>4.handler源码，内部使用</h3><h3 id="5-MVP优化，多余代码的处理"><a href="#5-MVP优化，多余代码的处理" class="headerlink" title="5.MVP优化，多余代码的处理"></a>5.MVP优化，多余代码的处理</h3><pre><code>使用设计模式，做到代码复用，，面向接口
+</code></pre><h3 id="6-RecylerView不同itemType复用机制"><a href="#6-RecylerView不同itemType复用机制" class="headerlink" title="6.RecylerView不同itemType复用机制"></a>6.RecylerView不同itemType复用机制</h3><pre><code>RecyclerView.RecycledViewPool中将ItemView以ItemType分类保存了下来。
+RecyclerView.RecycledViewPool可以实现在不同的RecyclerView之间共享ItemView,
+只要为这些不同RecyclerView设置同一个RecyclerView.RecycledViewPool就可以了。
+此由Map实现
+</code></pre><h3 id="7-RecylerView更具体使用"><a href="#7-RecylerView更具体使用" class="headerlink" title="7.RecylerView更具体使用"></a>7.RecylerView更具体使用</h3>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'letian'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
-</div>
+  
+</article>
+
+
             <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <footer class="footer">
 
@@ -299,6 +288,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     <script>
 var _hmt = _hmt || [];
 (function() {
