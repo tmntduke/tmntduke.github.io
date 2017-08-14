@@ -16,22 +16,19 @@
     
     
 
-    <meta name="description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+    <meta name="description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnecti">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试总结 | 阿木小巫">
 <meta property="og:url" content="http://yoursite.com/2017/08/14/面试总结/index.html">
 <meta property="og:site_name" content="阿木小巫">
-<meta property="og:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
-<meta property="og:updated_time" content="2017-08-14T12:37:04.000Z">
+<meta property="og:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnecti">
+<meta property="og:updated_time" content="2017-08-14T12:45:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结 | 阿木小巫">
-<meta name="twitter:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+<meta name="twitter:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnecti">
     
     
     
@@ -225,16 +222,11 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h3 id="1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）"><a href="#1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）" class="headerlink" title="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）"></a>1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）</h3><pre><code>epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-</code></pre><h3 id="2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"><a href="#2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点" class="headerlink" title="2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"></a>2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点</h3><pre><code>okHttp支持http2.0 UrlHttpConnection只支持http1.0/1.1 但他们同样使用Socket
-优点：使用Gzip 缓存 拦截器
-</code></pre><h3 id="3-handler取MQ中数据由时间取"><a href="#3-handler取MQ中数据由时间取" class="headerlink" title="3.handler取MQ中数据由时间取"></a>3.handler取MQ中数据由时间取</h3><h3 id="4-handler源码，内部使用"><a href="#4-handler源码，内部使用" class="headerlink" title="4.handler源码，内部使用"></a>4.handler源码，内部使用</h3><h3 id="5-MVP优化，多余代码的处理"><a href="#5-MVP优化，多余代码的处理" class="headerlink" title="5.MVP优化，多余代码的处理"></a>5.MVP优化，多余代码的处理</h3><pre><code>使用设计模式，做到代码复用，，面向接口
-</code></pre><h3 id="6-RecylerView不同itemType复用机制"><a href="#6-RecylerView不同itemType复用机制" class="headerlink" title="6.RecylerView不同itemType复用机制"></a>6.RecylerView不同itemType复用机制</h3><pre><code>RecyclerView.RecycledViewPool中将ItemView以ItemType分类保存了下来。
-RecyclerView.RecycledViewPool可以实现在不同的RecyclerView之间共享ItemView,
-只要为这些不同RecyclerView设置同一个RecyclerView.RecycledViewPool就可以了。
-此由Map实现
-</code></pre><h3 id="7-RecylerView更具体使用"><a href="#7-RecylerView更具体使用" class="headerlink" title="7.RecylerView更具体使用"></a>7.RecylerView更具体使用</h3>
+    <h4 id="1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）"><a href="#1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）" class="headerlink" title="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）"></a>1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）</h4><p>epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，<br>epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息</p>
+<h4 id="2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"><a href="#2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点" class="headerlink" title="2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"></a>2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点</h4><p>okHttp支持http2.0 UrlHttpConnection只支持http1.0/1.1 但他们同样使用Socket<br>优点：使用Gzip 缓存 拦截器</p>
+<h4 id="3-handler取MQ中数据由时间取"><a href="#3-handler取MQ中数据由时间取" class="headerlink" title="3.handler取MQ中数据由时间取"></a>3.handler取MQ中数据由时间取</h4><h4 id="4-handler源码，内部使用"><a href="#4-handler源码，内部使用" class="headerlink" title="4.handler源码，内部使用"></a>4.handler源码，内部使用</h4><h4 id="5-MVP优化，多余代码的处理"><a href="#5-MVP优化，多余代码的处理" class="headerlink" title="5.MVP优化，多余代码的处理"></a>5.MVP优化，多余代码的处理</h4><p>使用设计模式，做到代码复用，，面向接口</p>
+<h4 id="6-RecylerView不同itemType复用机制"><a href="#6-RecylerView不同itemType复用机制" class="headerlink" title="6.RecylerView不同itemType复用机制"></a>6.RecylerView不同itemType复用机制</h4><p>RecyclerView.RecycledViewPool中将ItemView以ItemType分类保存了下来。<br>RecyclerView.RecycledViewPool可以实现在不同的RecyclerView之间共享ItemView,<br>只要为这些不同RecyclerView设置同一个RecyclerView.RecycledViewPool就可以了。<br>此由Map实现</p>
+<h4 id="7-RecylerView更具体使用"><a href="#7-RecylerView更具体使用" class="headerlink" title="7.RecylerView更具体使用"></a>7.RecylerView更具体使用</h4>
   </section>
 
   
