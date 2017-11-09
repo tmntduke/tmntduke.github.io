@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      面试总结 | 阿木小巫 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="阿木小巫">
+    
+    
+
+    <meta name="description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结 | 阿木小巫">
+<meta property="og:url" content="http://yoursite.com/2017/07/14/面试总结/index.html">
+<meta property="og:site_name" content="阿木小巫">
+<meta property="og:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+<meta property="og:updated_time" content="2017-11-09T02:38:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试总结 | 阿木小巫">
+<meta name="twitter:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">阿木小巫</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          爱音乐 爱读书 爱编程
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/tmntduke" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">面试总结</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-07-14" class="post-meta__date date">2017-07-14</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/面试/">面试</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h4 id="1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）"><a href="#1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）" class="headerlink" title="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）"></a>1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）</h4><pre><code>epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
+epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+</code></pre><h4 id="2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"><a href="#2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点" class="headerlink" title="2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"></a>2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点</h4><pre><code>okHttp支持http2.0 UrlHttpConnection只支持http1.0/1.1 但他们同样使用Socket
+优点：使用Gzip 缓存 拦截器
+</code></pre><h4 id="3-handler取MQ中数据由时间取"><a href="#3-handler取MQ中数据由时间取" class="headerlink" title="3.handler取MQ中数据由时间取"></a>3.handler取MQ中数据由时间取</h4><h4 id="4-handler源码，内部使用"><a href="#4-handler源码，内部使用" class="headerlink" title="4.handler源码，内部使用"></a>4.handler源码，内部使用</h4><h4 id="5-MVP优化，多余代码的处理"><a href="#5-MVP优化，多余代码的处理" class="headerlink" title="5.MVP优化，多余代码的处理"></a>5.MVP优化，多余代码的处理</h4><pre><code>使用设计模式，做到代码复用，，面向接口
+</code></pre><h4 id="6-RecylerView不同itemType复用机制"><a href="#6-RecylerView不同itemType复用机制" class="headerlink" title="6.RecylerView不同itemType复用机制"></a>6.RecylerView不同itemType复用机制</h4><pre><code>RecyclerView.RecycledViewPool中将ItemView以ItemType分类保存了下来。
+RecyclerView.RecycledViewPool可以实现在不同的RecyclerView之间共享ItemView,
+只要为这些不同RecyclerView设置同一个RecyclerView.RecycledViewPool就可以了。
+此由Map实现
+</code></pre><h4 id="7-RecylerView更具体使用"><a href="#7-RecylerView更具体使用" class="headerlink" title="7.RecylerView更具体使用"></a>7.RecylerView更具体使用</h4><h4 id="8-Loop-中死循环取mq的next-当为空时return退出"><a href="#8-Loop-中死循环取mq的next-当为空时return退出" class="headerlink" title="8.Loop 中死循环取mq的next 当为空时return退出"></a>8.Loop 中死循环取mq的next 当为空时return退出</h4><pre><code>ui线程不让其退出用到死循环，loop死循环本身不会卡死 卡死是由于调用生命周期方法等待时间太长
+</code></pre><h4 id="9-post-get参数格式"><a href="#9-post-get参数格式" class="headerlink" title="9.post/get参数格式"></a>9.post/get参数格式</h4><pre><code>get： http://www.it315.org/counter.jsp?name=zhangsan&amp;password=123 数据量在1kb以下
+
+post：提交form表单 Content-Type: multipart/form-data  或 application/x-www-form-urlencoded key=value&amp;...
+    提交json       
+</code></pre><h4 id="10-线程和进程"><a href="#10-线程和进程" class="headerlink" title="10.线程和进程"></a>10.线程和进程</h4><pre><code>进程有自己的地址 相互独立 线程无地址独立地址空间 共享一片区域 有自己的堆栈 依赖与进程
+进程有一定独立功能 提高效率 便于管理
+线程能并发执行 进程只能做一件事，当阻塞后无法继续
+</code></pre><h4 id="11-线程通信"><a href="#11-线程通信" class="headerlink" title="11.线程通信"></a>11.线程通信</h4><pre><code>正常情况下，每个子线程完成各自的任务就可以结束了 为了多个线程协同工作来完成某个任务所以要线程间通信。主要为了协调。
+</code></pre>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'letian'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer class="footer">
+
+   <p class="copyright">
+   本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次, 本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+</p>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2d6d8820189424c84b870bc40cc2c48c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
