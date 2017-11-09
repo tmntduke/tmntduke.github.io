@@ -16,22 +16,19 @@
     
     
 
-    <meta name="description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+    <meta name="description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）  epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，  epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试总结 | 阿木小巫">
 <meta property="og:url" content="http://yoursite.com/2017/07/14/面试总结/index.html">
 <meta property="og:site_name" content="阿木小巫">
-<meta property="og:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
-<meta property="og:updated_time" content="2017-11-09T02:38:19.000Z">
+<meta property="og:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）  epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，  epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConn">
+<meta property="og:updated_time" content="2017-11-09T02:51:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结 | 阿木小巫">
-<meta name="twitter:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConnect">
+<meta name="twitter:description" content="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）  epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，  epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
+2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点okHttp支持http2.0 UrlHttpConn">
     
     
     
@@ -225,25 +222,16 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）"><a href="#1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）" class="headerlink" title="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）"></a>1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）</h4><pre><code>epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，
-epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息
-</code></pre><h4 id="2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"><a href="#2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点" class="headerlink" title="2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"></a>2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点</h4><pre><code>okHttp支持http2.0 UrlHttpConnection只支持http1.0/1.1 但他们同样使用Socket
-优点：使用Gzip 缓存 拦截器
-</code></pre><h4 id="3-handler取MQ中数据由时间取"><a href="#3-handler取MQ中数据由时间取" class="headerlink" title="3.handler取MQ中数据由时间取"></a>3.handler取MQ中数据由时间取</h4><h4 id="4-handler源码，内部使用"><a href="#4-handler源码，内部使用" class="headerlink" title="4.handler源码，内部使用"></a>4.handler源码，内部使用</h4><h4 id="5-MVP优化，多余代码的处理"><a href="#5-MVP优化，多余代码的处理" class="headerlink" title="5.MVP优化，多余代码的处理"></a>5.MVP优化，多余代码的处理</h4><pre><code>使用设计模式，做到代码复用，，面向接口
-</code></pre><h4 id="6-RecylerView不同itemType复用机制"><a href="#6-RecylerView不同itemType复用机制" class="headerlink" title="6.RecylerView不同itemType复用机制"></a>6.RecylerView不同itemType复用机制</h4><pre><code>RecyclerView.RecycledViewPool中将ItemView以ItemType分类保存了下来。
-RecyclerView.RecycledViewPool可以实现在不同的RecyclerView之间共享ItemView,
-只要为这些不同RecyclerView设置同一个RecyclerView.RecycledViewPool就可以了。
-此由Map实现
-</code></pre><h4 id="7-RecylerView更具体使用"><a href="#7-RecylerView更具体使用" class="headerlink" title="7.RecylerView更具体使用"></a>7.RecylerView更具体使用</h4><h4 id="8-Loop-中死循环取mq的next-当为空时return退出"><a href="#8-Loop-中死循环取mq的next-当为空时return退出" class="headerlink" title="8.Loop 中死循环取mq的next 当为空时return退出"></a>8.Loop 中死循环取mq的next 当为空时return退出</h4><pre><code>ui线程不让其退出用到死循环，loop死循环本身不会卡死 卡死是由于调用生命周期方法等待时间太长
-</code></pre><h4 id="9-post-get参数格式"><a href="#9-post-get参数格式" class="headerlink" title="9.post/get参数格式"></a>9.post/get参数格式</h4><pre><code>get： http://www.it315.org/counter.jsp?name=zhangsan&amp;password=123 数据量在1kb以下
+    <h4 id="1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）"><a href="#1-handler死循环是其他线程还可以抢占资源的机制-（管道pipe）" class="headerlink" title="1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）"></a>1.handler死循环是其他线程还可以抢占资源的机制 （管道pipe）</h4><p>  epoll+pipe，有消息就依次执行，没消息就block住，让出CPU，等有消息了，<br>  epoll会往pipe中写一个字符，把主线程从block状态唤起，主线程就继续依次执行消息</p>
+<h4 id="2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"><a href="#2-okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点" class="headerlink" title="2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点"></a>2.okHttp和UrlHttpConnection最核心的区别，okHttp的核心优点</h4><p>okHttp支持http2.0 UrlHttpConnection只支持http1.0/1.1 但他们同样使用Socket<br>优点：使用Gzip 缓存 拦截器</p>
+<h4 id="3-handler取MQ中数据由时间取"><a href="#3-handler取MQ中数据由时间取" class="headerlink" title="3.handler取MQ中数据由时间取"></a>3.handler取MQ中数据由时间取</h4><h4 id="4-handler源码，内部使用"><a href="#4-handler源码，内部使用" class="headerlink" title="4.handler源码，内部使用"></a>4.handler源码，内部使用</h4><h4 id="5-MVP优化，多余代码的处理"><a href="#5-MVP优化，多余代码的处理" class="headerlink" title="5.MVP优化，多余代码的处理"></a>5.MVP优化，多余代码的处理</h4><p>使用设计模式，做到代码复用，，面向接口</p>
+<h4 id="6-RecylerView不同itemType复用机制"><a href="#6-RecylerView不同itemType复用机制" class="headerlink" title="6.RecylerView不同itemType复用机制"></a>6.RecylerView不同itemType复用机制</h4><p>RecyclerView.RecycledViewPool中将ItemView以ItemType分类保存了下来。<br>RecyclerView.RecycledViewPool可以实现在不同的RecyclerView之间共享ItemView,<br>只要为这些不同RecyclerView设置同一个RecyclerView.RecycledViewPool就可以了。<br>此由Map实现</p>
+<h4 id="7-RecylerView更具体使用"><a href="#7-RecylerView更具体使用" class="headerlink" title="7.RecylerView更具体使用"></a>7.RecylerView更具体使用</h4><h4 id="8-Loop-中死循环取mq的next-当为空时return退出"><a href="#8-Loop-中死循环取mq的next-当为空时return退出" class="headerlink" title="8.Loop 中死循环取mq的next 当为空时return退出"></a>8.Loop 中死循环取mq的next 当为空时return退出</h4><p>ui线程不让其退出用到死循环，loop死循环本身不会卡死 卡死是由于调用生命周期方法等待时间太长</p>
+<h4 id="9-post-get参数格式"><a href="#9-post-get参数格式" class="headerlink" title="9.post/get参数格式"></a>9.post/get参数格式</h4><p>get： <a href="http://www.it315.org/counter.jsp?name=zhangsan&amp;password=123" target="_blank" rel="external">http://www.it315.org/counter.jsp?name=zhangsan&amp;password=123</a> 数据量在1kb以下</p>
+<p>post：提交form表单 Content-Type: multipart/form-data  或 application/x-www-form-urlencoded key=value&amp;…<br>        提交json       </p>
+<h4 id="10-线程和进程"><a href="#10-线程和进程" class="headerlink" title="10.线程和进程"></a>10.线程和进程</h4><p>进程有自己的地址 相互独立 线程无地址独立地址空间 共享一片区域 有自己的堆栈 依赖与进程<br>进程有一定独立功能 提高效率 便于管理<br>线程能并发执行 进程只能做一件事，当阻塞后无法继续</p>
+<h4 id="11-线程通信"><a href="#11-线程通信" class="headerlink" title="11.线程通信"></a>11.线程通信</h4><p>正常情况下，每个子线程完成各自的任务就可以结束了 为了多个线程协同工作来完成某个任务所以要线程间通信。主要为了协调。</p>
 
-post：提交form表单 Content-Type: multipart/form-data  或 application/x-www-form-urlencoded key=value&amp;...
-    提交json       
-</code></pre><h4 id="10-线程和进程"><a href="#10-线程和进程" class="headerlink" title="10.线程和进程"></a>10.线程和进程</h4><pre><code>进程有自己的地址 相互独立 线程无地址独立地址空间 共享一片区域 有自己的堆栈 依赖与进程
-进程有一定独立功能 提高效率 便于管理
-线程能并发执行 进程只能做一件事，当阻塞后无法继续
-</code></pre><h4 id="11-线程通信"><a href="#11-线程通信" class="headerlink" title="11.线程通信"></a>11.线程通信</h4><pre><code>正常情况下，每个子线程完成各自的任务就可以结束了 为了多个线程协同工作来完成某个任务所以要线程间通信。主要为了协调。
-</code></pre>
   </section>
 
   
