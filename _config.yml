@@ -1,0 +1,8 @@
+title: Tmntduke
+description: 爱读书 爱音乐 爱编程
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
