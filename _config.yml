@@ -6,3 +6,6 @@ theme: jekyll-theme-cayman
 
 gems:
   - jekyll-mentions
+
+# URL
+## If your site is put in a subdirectory, set tmntduke.github.io as 'tmntduke.com' and root as '/child/'
